@@ -1,0 +1,11 @@
+{
+  "name": "design-md-extractor",
+  "owner": { "name": "Suhail Khan" },
+  "plugins": [
+    {
+      "name": "design-md-extractor",
+      "source": "./",
+      "description": "URL in, measured DESIGN.md out: design system, component states, layout, dark mode and architecture signals."
+    }
+  ]
+}
