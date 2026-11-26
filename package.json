@@ -1,0 +1,12 @@
+{
+  "name": "design-md-extractor",
+  "version": "1.0.0",
+  "description": "Agent skill: give a website URL, get a measured DESIGN.md (design system + architecture). Works in Claude Code, Codex, Antigravity and Cursor.",
+  "license": "MIT",
+  "author": "Suhail Khan",
+  "type": "module",
+  "bin": { "design-md-extractor-install": "install.mjs" },
+  "scripts": { "install-skill": "node install.mjs", "selftest": "node scripts/selftest.mjs" },
+  "keywords": ["agent-skill", "design-md", "design-system", "claude-code", "codex", "antigravity", "cursor", "playwright", "website-cloner"],
+  "engines": { "node": ">=18" }
+}

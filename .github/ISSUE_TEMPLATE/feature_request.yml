@@ -1,0 +1,11 @@
+name: Feature request
+description: Suggest something the extractor or skill should measure or support
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes: { label: What is missing, description: "What can you not rebuild from the current DESIGN.md?" }
+    validations: { required: true }
+  - type: textarea
+    id: idea
+    attributes: { label: Proposed solution, description: "How could it be measured from the live page?" }

@@ -1,0 +1,23 @@
+{
+  "name": "design-md-extractor",
+  "version": "1.0.0",
+  "description": "Give a website URL, get a measured DESIGN.md: design tokens, component states, layout, dark mode and system architecture.",
+  "author": { "name": "Suhail Khan" },
+  "homepage": "https://github.com/suhailxhan/design-md-extractor",
+  "repository": "https://github.com/suhailxhan/design-md-extractor",
+  "license": "MIT",
+  "keywords": ["design-md", "design-system", "website-cloner", "playwright"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "design-md-extractor",
+    "shortDescription": "URL in, measured DESIGN.md out",
+    "longDescription": "Opens a public website in a real browser, measures its computed styles, component states, layout, dark mode and architecture signals, and writes a DESIGN.md another developer or AI agent can rebuild from.",
+    "developerName": "Suhail Khan",
+    "category": "Coding",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/suhailxhan/design-md-extractor",
+    "defaultPrompt": ["Create a DESIGN.md from https://example.com"],
+    "brandColor": "#7C5CFF",
+    "logo": "./assets/logo.svg"
+  }
+}

@@ -1,0 +1,43 @@
+name: CI
+on:
+  push: { branches: [main] }
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  selftest:
+    name: Self-test (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "${{ matrix.node }}" }
+      - run: npm i --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node skills/design-md-extractor/scripts/selftest.mjs
+  manifests:
+    name: Manifests and installer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: JSON manifests are valid
+        run: |
+          for f in package.json .claude-plugin/plugin.json .claude-plugin/marketplace.json .cursor-plugin/plugin.json .codex-plugin/plugin.json .agents/plugins/marketplace.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "ok $f"
+          done
+      - name: SKILL.md name matches folder and has a description
+        run: |
+          node -e "
+          const s=require('fs').readFileSync('skills/design-md-extractor/SKILL.md','utf8');
+          const m=s.match(/^---\n([\s\S]*?)\n---/); if(!m) throw new Error('no frontmatter');
+          if(!/^name: design-md-extractor$/m.test(m[1])) throw new Error('name mismatch');
+          if(!/^description: .{40,}/m.test(m[1])) throw new Error('description missing');
+          console.log('frontmatter ok');"
+      - name: Installer dry run
+        run: HOME=$(mktemp -d) node install.mjs --dry-run

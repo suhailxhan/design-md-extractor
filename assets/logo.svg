@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="design-md-extractor logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="win"><rect x="22" y="30" width="84" height="70" rx="10"/></clipPath>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#0b0d12"/>
+  <rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="url(#g)" stroke-width="3"/>
+  <!-- browser window -->
+  <rect x="22" y="30" width="84" height="70" rx="10" fill="#141824" stroke="url(#g)" stroke-width="3"/>
+  <path d="M22 46h84" stroke="url(#g)" stroke-width="3"/>
+  <circle cx="33" cy="38" r="3" fill="#7c5cff"/><circle cx="43" cy="38" r="3" fill="#22d3ee"/><circle cx="53" cy="38" r="3" fill="#a3e635"/>
+  <!-- swatches -->
+  <rect x="32" y="56" width="14" height="14" rx="4" fill="#7c5cff"/>
+  <rect x="52" y="56" width="14" height="14" rx="4" fill="#22d3ee"/>
+  <rect x="72" y="56" width="14" height="14" rx="4" fill="#a3e635"/>
+  <!-- md mark: down arrow into text lines -->
+  <path d="M32 82h30M32 90h46" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+  <path d="M90 78v14m-7-7l7 7 7-7" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- scan line -->
+  <g clip-path="url(#win)">
+    <rect x="22" y="-14" width="84" height="14" fill="url(#scan)">
+      <animate attributeName="y" values="30;100;30" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"/>
+    </rect>
+  </g>
+</svg>
